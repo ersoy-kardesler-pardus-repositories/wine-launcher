@@ -5,6 +5,8 @@
 
 import gettext
 import locale
+import os
+import subprocess
 
 import gi
 gi.require_version("Gtk", "3.0")
@@ -13,11 +15,11 @@ gi.require_version("Gio", "2.0")
 from gi.repository import Gtk
 
 locale.setlocale(locale.LC_ALL, "")
-locale.bindtextdomain("python-gtk-hello-world", "locale/")
-gettext.bindtextdomain("python-gtk-hello-world", "locale/")
-gettext.textdomain("python-gtk-hello-world")
+locale.bindtextdomain("wine-launcher", "locale/")
+gettext.bindtextdomain("wine-launcher", "locale/")
+gettext.textdomain("wine-launcher")
 _ = gettext.gettext
-gettext.install("python-gtk-hello-world", "locale/")
+gettext.install("wine-launcher", "locale/")
 
 
 class WineLauncherWindow(object):
@@ -32,7 +34,18 @@ class WineLauncherWindow(object):
         self.WineLauncherWindow.set_application(self.App)
         self.WineLauncherWindow.show()
 
+        self.WineLauncherWindowEntryPrefix = self.builder.get_object("WineLauncherWindowEntryPrefix")
+        self.WineLauncherWindowEntryArch = self.builder.get_object("WineLauncherWindowEntryArch")
+        self.WineLauncherWindowEntryProgram = self.builder.get_object("WineLauncherWindowEntryProgram")
+
         self.WineLauncherWindowAboutDialog = self.builder.get_object("WineLauncherWindowAboutDialog")
+
+    def OnClickedLaunchButton(self, button):
+        current_env = os.environ.copy()
+        current_env["WINEPREFIX"] = self.WineLauncherWindowEntryPrefix.get_text()
+        current_env["WINEARCH"] = self.WineLauncherWindowEntryArch.get_text()
+        subprocess.run(["wine", self.WineLauncherWindowEntryProgram.get_text()], env=current_env)
+        self.WineLauncherWindow.destroy()
 
     def OnClickedMenuAbout(self, menu_item):
         self.WineLauncherWindowAboutDialog.run()

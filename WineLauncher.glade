@@ -78,6 +78,7 @@
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="receives-default">True</property>
+            <signal name="clicked" handler="OnClickedLaunchButton" swapped="no"/>
           </object>
           <packing>
             <property name="left-attach">0</property>
@@ -123,7 +124,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkEntry" id="WineLauncherWindowPrefix">
+          <object class="GtkEntry" id="WineLauncherWindowEntryPrefix">
             <property name="visible">True</property>
             <property name="can-focus">True</property>
           </object>
@@ -134,7 +135,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkEntry" id="WineLauncherWindowArch">
+          <object class="GtkEntry" id="WineLauncherWindowEntryArch">
             <property name="visible">True</property>
             <property name="can-focus">True</property>
           </object>
