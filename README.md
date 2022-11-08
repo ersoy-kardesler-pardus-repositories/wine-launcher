@@ -1,6 +1,6 @@
-# Python GTK+ Hello World
+# Wine Launcher for Pardus 21
 
-My new template for my Python (3.x) GTK+ (3.x) applications. For Pardus 21 only.
+Wine launcher with some Wine variables (for Pardus 21).
 
 ## Running
 After cloning this repository, update translation strings:

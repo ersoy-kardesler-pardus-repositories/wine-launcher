@@ -1,5 +1,5 @@
-# PROJECT: Python GTK+ Hello World
-# DESC: Python GTK+ Hello Main Window Module
+# PROJECT: Wine Launcher
+# DESC: Wine Launcher Main Window Module
 # AUTHOR: Erdem Ersoy
 # LICENSE: CC0-1.0
 
@@ -20,23 +20,20 @@ _ = gettext.gettext
 gettext.install("python-gtk-hello-world", "locale/")
 
 
-class HelloWindow(object):
+class WineLauncherWindow(object):
     def __init__(self, app):
         self.App = app
 
-        gui_file = "HelloWindow.glade"
+        gui_file = "WineLauncher.glade"
         self.builder = Gtk.Builder().new_from_file(gui_file)
         self.builder.connect_signals(self)
 
-        self.HelloWindow = self.builder.get_object("HelloWindow")
-        self.HelloWindow.set_application(self.App)
-        self.HelloWindow.show()
+        self.WineLauncherWindow = self.builder.get_object("WineLauncherWindow")
+        self.WineLauncherWindow.set_application(self.App)
+        self.WineLauncherWindow.show()
 
-        self.HelloWindowAboutDialog = self.builder.get_object("HelloWindowAboutDialog")
-
-    def OnClickedExit(self, button):
-        self.HelloWindow.destroy()
+        self.WineLauncherWindowAboutDialog = self.builder.get_object("WineLauncherWindowAboutDialog")
 
     def OnClickedMenuAbout(self, menu_item):
-        self.HelloWindowAboutDialog.run()
-        self.HelloWindowAboutDialog.hide()
+        self.WineLauncherWindowAboutDialog.run()
+        self.WineLauncherWindowAboutDialog.hide()

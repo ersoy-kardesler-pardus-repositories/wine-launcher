@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# PROJECT: Python GTK+ Hello World
-# DESC: Python GTK+ Hello Update Strings Shell Script
+# PROJECT: Wine Launcher
+# DESC: Wine Launcher Update Strings Shell Script
 # AUTHOR: Erdem Ersoy
 # LICENSE: CC0-1.0
 
-APP_NAME=python-gtk-hello-world
-APP_VERSION=1.0
+APP_NAME=wine-launcher
+APP_VERSION=0.1.0
 
 xgettext --default-domain=${APP_NAME} \
          --lang=Python \
@@ -14,7 +14,7 @@ xgettext --default-domain=${APP_NAME} \
          --output=${APP_NAME}.pot \
          --package-name=${APP_NAME} \
          --package-version=${APP_VERSION} \
-         HelloWindow.py
+         WineLauncher.py
 
 xgettext --default-domain=${APP_NAME} \
          --lang=Glade \
@@ -22,7 +22,7 @@ xgettext --default-domain=${APP_NAME} \
          --output=${APP_NAME}.pot \
          --package-name=${APP_NAME} \
          --package-version=${APP_VERSION} \
-         HelloWindow.glade
+         WineLauncher.glade
 
 msgmerge --lang=en \
          --update \
