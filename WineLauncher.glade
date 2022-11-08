@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated with glade 3.38.2 -->
-<interface domain="python-gtk-hello-world">
+<interface domain="wine-launcher">
   <requires lib="gtk+" version="3.24"/>
   <object class="GtkAboutDialog" id="WineLauncherWindowAboutDialog">
     <property name="can-focus">False</property>
@@ -13,7 +13,7 @@
     <property name="license" translatable="yes">Licensed with CC0-1.0. See LICENSE file for details.</property>
     <property name="authors">Erdem Ersoy (eersoy93)</property>
     <property name="documenters">Erdem Ersoy (eersoy93)</property>
-    <property name="translator-credits" translatable="yes">Erdem Ersoy (eersoy93)</property>
+    <property name="translator-credits">Erdem Ersoy (eersoy93)</property>
     <property name="logo-icon-name">application-x-executable</property>
     <property name="license-type">custom</property>
     <child internal-child="vbox">
