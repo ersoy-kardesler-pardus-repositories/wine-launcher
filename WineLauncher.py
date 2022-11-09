@@ -42,8 +42,10 @@ class WineLauncherWindow(object):
 
     def OnClickedLaunchButton(self, button):
         current_env = os.environ.copy()
-        current_env["WINEPREFIX"] = self.WineLauncherWindowEntryPrefix.get_text()
-        current_env["WINEARCH"] = self.WineLauncherWindowEntryArch.get_text()
+        if self.WineLauncherWindowEntryPrefix.get_text() != "":
+            current_env["WINEPREFIX"] = self.WineLauncherWindowEntryPrefix.get_text()
+        if self.WineLauncherWindowEntryArch.get_text() != "":
+            current_env["WINEARCH"] = self.WineLauncherWindowEntryArch.get_text()
         subprocess.run(["wine", self.WineLauncherWindowEntryProgram.get_text()], env=current_env)
         self.WineLauncherWindow.destroy()
 
