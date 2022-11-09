@@ -9,7 +9,7 @@ After cloning this repository, update translation strings:
 
 After that, you can run with this command:
 
-    ./main.py
+    ./wine-launcher
 
 ## Author
 Erdem Ersoy (eersoy93)
