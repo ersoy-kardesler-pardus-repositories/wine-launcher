@@ -1,6 +1,6 @@
 # Wine Launcher for Pardus 21
 
-Wine launcher with some Wine variables (for Pardus 21).
+Launch Wine with some Wine variables (for Pardus 21).
 
 ![Wine Launcher Screenshot](wine-launcher.png "Wine Launcher Screenshot")
 
